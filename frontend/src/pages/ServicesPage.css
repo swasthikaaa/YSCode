@@ -1,0 +1,283 @@
+.services-page {
+    padding-top: 40px;
+    background: var(--bg-secondary);
+}
+
+.service-card {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+.service-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--accent-primary);
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.glass-card:hover .service-icon-wrapper {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+}
+
+.service-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+}
+
+.service-desc {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    padding: 5px 0;
+}
+
+.service-features li svg {
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+/* Process Section */
+.process-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+}
+
+.process-grid::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-light), var(--accent-primary), var(--accent-light), transparent);
+    z-index: 0;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.process-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-primary);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.process-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.process-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Technologies Section */
+.tech-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.tech-item {
+    padding: 12px 22px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+    box-shadow: var(--shadow-sm);
+}
+
+.tech-item:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: var(--accent-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .process-grid::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-page {
+        padding-top: 20px;
+    }
+
+    .service-icon-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .service-desc {
+        font-size: 0.85rem;
+    }
+
+    .process-section {
+        padding: 60px 0;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .process-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+
+    .process-title {
+        font-size: 1rem;
+    }
+
+    .process-desc {
+        font-size: 0.8rem;
+        max-width: 160px;
+    }
+
+    .tech-section {
+        padding: 60px 0;
+    }
+
+    .tech-grid {
+        gap: 0.5rem;
+    }
+
+    .tech-item {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 1rem;
+    }
+
+    .service-title {
+        font-size: 1rem;
+    }
+
+    .service-desc {
+        font-size: 0.85rem;
+    }
+
+    .service-features li {
+        font-size: 0.75rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .process-step {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+    }
+
+    .process-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .process-desc {
+        max-width: none;
+        margin: 0;
+    }
+
+    .tech-item {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+}
